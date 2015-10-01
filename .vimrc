@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,8 +31,13 @@ filetype plugin indent on    " required
 
 set number
 
+let g:NERDTreeShowHidden=1
+
 syntax enable
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 autocmd vimenter * NERDTree
+
+set laststatus=2
