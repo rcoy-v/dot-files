@@ -10,4 +10,9 @@ function gitRemotePatch() {
   curl -L $1 | git am -3 -s
 }
 
+function gitRemotePullRequest() {
+  git pull --no-rebase --squash $1 $2 
+}
+
 alias gp=gitRemotePatch
+alias gpr=gitRemotePullRequest
