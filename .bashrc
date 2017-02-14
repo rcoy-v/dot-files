@@ -14,7 +14,7 @@ function gitRemotePatch() {
 }
 
 function gitRemotePullRequest() {
-  git fetch origin +refs/pull/*/head:refs/remotes/origin/pr/*
+  git fetch origin +refs/pull/$1/head:refs/remotes/origin/pr/$1
   git pull --no-rebase --squash origin pull/$1/head
 }
 
