@@ -14,8 +14,9 @@ function gitRemotePatch() {
 }
 
 function gitRemotePullRequest() {
-  git fetch origin +refs/pull/$1/head:refs/remotes/origin/pr/$1
-  git pull --no-rebase --squash origin pull/$1/head
+  local remote=${2:-origin}
+  git fetch ${remote} +refs/pull/$1/head:refs/remotes/${remote}/pr/$1
+  git pull --no-rebase --squash ${remote} pull/$1/head
 }
 
 alias gp=gitRemotePatch
