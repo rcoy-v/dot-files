@@ -19,5 +19,10 @@ function gitRemotePullRequest() {
   git pull --no-rebase --squash ${remote} pull/$1/head
 }
 
+function gitCleanLocalBranches() {
+  git branch | grep -v "^*" | xargs git branch -D
+}
+
 alias gp=gitRemotePatch
 alias gpr=gitRemotePullRequest
+alias gclb=gitCleanLocalBranches
