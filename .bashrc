@@ -1,6 +1,5 @@
-# add ssh key to agent
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
+# gpg agent for ssh auth
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # customized prompt
 PS1='\[\e[38;5;75m\]\W\[\e[m\] \\$ '
